@@ -219,7 +219,7 @@ def consensuswasserstein_general(meanlist,covariancelist,delta_r, prediction, rh
     #for i in range(num_posteriors): 
         #for j in range(num_posteriors):
             #P[i,j] = np.sum(np.multiply(np.sqrt(sv_matrix[i,:]),np.sqrt(sv_matrix[j,:])))
-            #np.multiply(np.sqrt(sv_matrix[i,:]),np.sqrt(sv_matrix[j,:]))是(d_{i1}d_{j1})^{1/2}+...+(d_{in}d_{jn})^{1/2}
+            
             
     #obj = 0
     #for i in range(num_posteriors): 
@@ -230,7 +230,7 @@ def consensuswasserstein_general(meanlist,covariancelist,delta_r, prediction, rh
     #obj = cp.sum_squares(weights @ sv_matrix)
     obj = cp.sum_squares(sv_matrix.T @ weights.T)
     #obj = cp.quad_form(weights, P)
-    delta = delta_r * np.linalg.norm(meanlist[-1] - prediction)#prediction是mu_1
+    delta = delta_r * np.linalg.norm(meanlist[-1] - prediction)
     constraints = [weights >= 0,
                    cp.sum(weights) == 1]
     temp = 0

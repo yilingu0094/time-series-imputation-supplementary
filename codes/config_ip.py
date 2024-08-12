@@ -9,9 +9,9 @@ s = np.loadtxt("/home/yilin/code/bayesian_imputation_code/100_Portfolios_Daily.t
 fulldata = s[:,1:]
 fulldata = 10*fulldata
 
-n_experiment = 1
+n_experiment = 50
 num_points = 49
-m = 1 #number of multiply-imputed dataset
+m = 100 #number of multiply-imputed dataset
 mu_p = np.repeat(0.0,n)
 covp_inv = np.diag(np.full(n,0.0))
 

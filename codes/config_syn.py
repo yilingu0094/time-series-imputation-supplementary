@@ -10,7 +10,7 @@ mu = 0.0 + np.linspace(-0.1, 0.5, n)
 cov = np.ones((n,n))+np.eye(n)
 cov = 1 * cov
 
-n_experiment = 1
+n_experiment = 100
 m = 10
 mu_p = np.repeat(0.0,n)
 covp_inv = np.diag(np.full(n,0.0))
